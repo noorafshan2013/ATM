@@ -7,7 +7,7 @@ let pinAnswer = await inquirer.prompt([
         name: "pin",
         message: "enter your pin code",
         type: "number",
-    }
+    },
 ]);
 if (pinAnswer.pin === myPin) {
     console.log("correct pin code!!");
@@ -16,16 +16,16 @@ if (pinAnswer.pin === myPin) {
             name: "operation",
             message: "please select an option :",
             type: "list",
-            choices: ["withdraw", "check balance", "fastcash"]
-        }
+            choices: ["withdraw", "check balance", "fastcash"],
+        },
     ]);
     if (operationAns.operation === "withdraw") {
         let amountAns = await inquirer.prompt([
             {
                 name: "amount",
                 message: "enter your amount",
-                type: "number"
-            }
+                type: "number",
+            },
         ]);
         if (amountAns.amount < myBalance) {
             myBalance -= amountAns.amount;
@@ -44,8 +44,8 @@ if (pinAnswer.pin === myPin) {
                 name: "cash",
                 message: "select amount",
                 type: "list",
-                choices: ["1000", "2000", "5000", "10000", "15000", "20000", "25000"]
-            }
+                choices: ["1000", "2000", "5000", "10000", "15000", "20000", "25000"],
+            },
         ]);
         if (cashAns.cash < myBalance) {
             myBalance -= cashAns.cash;
